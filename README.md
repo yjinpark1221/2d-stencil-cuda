@@ -100,3 +100,11 @@ Because of the 1 minute time limit for computing nodes, I have uncommented one a
 ./run_generic.sh -type coarsen -dataset 2 -tile 32 -radius 2
 ./run_generic.sh -type hybrid -dataset 2 -tile 32 -radius 2
 ```
+## Code Explanation
+
+Please refer to the report for more details.
+
+- `baseline.cu` : no tiling, no coarsening
+- `tiling.cu` : tiling (tile width is adjustable by setting TILE_WIDTH in Makefile or by command-line arguments of shell scripts.
+- `coarsen.cu` : coarsened without tiling (default coarsening factor is set to 4 since it had the best perforamance among 2, 4, and 8)
+- `hybrid.cu` : coarsened with tiling 
