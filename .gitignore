@@ -1,2 +1,5 @@
 Dataset/
 build/
+tmp_ncu_lock
+*.log
+results/

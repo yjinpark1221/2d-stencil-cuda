@@ -44,7 +44,7 @@ fi
 
 # Initialize directories
 base_dir=$(dirname "$0")/..
-dataset_dir="${base_dir}/Dataset"
+dataset_dir="${base_dir}/src/Dataset"
 my_tmp_dir="${base_dir}/tmp_ncu_lock"
 result_dir="${base_dir}/results/output/${impl_type}"
 profile_dir="${base_dir}/results/profile/${impl_type}"
@@ -56,11 +56,11 @@ mkdir -p "${profile_dir}"
 
 # Build binary
 echo ">> Building binary for type: ${impl_type}"
-cd "${base_dir}/sources"
-make clean
+cd "${base_dir}/src"
+# make clean
 make "${impl_type}" TILE_WIDTH="${TILE_WIDTH}" RADIUS="${RADIUS}"
 
-bin_path="${base_dir}/sources/build/${impl_type}"
+bin_path="${base_dir}/src/build/${impl_type}"
 
 if [[ ! -f "$bin_path" ]]; then
     echo "Error: Binary not found at $bin_path"

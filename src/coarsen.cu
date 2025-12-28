@@ -536,7 +536,7 @@ int main(int argc, char **argv) {
 #elif RADIUS == 2
   stencil_2D_global_coarsen_4_radius_2<<<dimGrid, dimBlockCoarsen4>>>(deviceInput, deviceOutput, /* width= */ numColumns, /* height= */ numRows);
 #else
-#error "Unsupported RADIUS value. Please define RADIUS as 1 or 2
+#error "Unsupported RADIUS value. Please define RADIUS as 1 or 2"
 #endif
 
   // // Coarsened block: mapping 1 thread to 8 pixels in row direction.

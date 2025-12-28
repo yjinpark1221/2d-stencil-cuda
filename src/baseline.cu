@@ -90,7 +90,7 @@ int main(int argc, char **argv) {
                (numRows + TILE_WIDTH - 1) / TILE_WIDTH, 1);
 
   gpuTKTime_start(Compute, "Performing CUDA computation");
-  stencil_2D_naive<<<dimGrid, dimBlock>>>(deviceInput, deviceOutput, /* width= */ numColumns, /* height= */ numRows);
+  stencil_baseline<<<dimGrid, dimBlock>>>(deviceInput, deviceOutput, /* width= */ numColumns, /* height= */ numRows);
 
   gpuTKCheck(cudaGetLastError());
   gpuTKCheck(cudaDeviceSynchronize());

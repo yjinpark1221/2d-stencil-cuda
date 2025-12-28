@@ -11,7 +11,7 @@ GPP_FLAGS= -std=c++11 -O3
 
 # GPU TK paths
 INCLUDE= -I./../libgputk
-LIBgpuTK= -L./../build -lgputk -lcuda
+LIBgpuTK= -L././build -lgputk -lcuda
 LIBS= $(LIBgpuTK)
 
 TILE_WIDTH?=16
@@ -47,5 +47,5 @@ hybrid:
 	$(NVCC) $(NVCC_FLAGS) hybrid.cu $(INCLUDE) $(LIBS) -o $(OUTPUT_DIR)/hybrid -DTILE_WIDTH=$(TILE_WIDTH) -DRADIUS=$(RADIUS)
 
 clean:
-	rm -f $(OUTPUT_DIR)/*
+	rm -f $(OUTPUT_DIR)/baseline $(OUTPUT_DIR)/tiling $(OUTPUT_DIR)/coarsen $(OUTPUT_DIR)/hybrid
 
